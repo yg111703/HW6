@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <style>
+        body{text-align: center;}
+        A:link{text-decoration: none; color: black;}
+    </style>
+</head>
+<body>
+    <h1>{{movie.title}}</h1>
+    <div>
+    예매율: {{movie.percent}}
+    <br>
+    <p>후기: {{movie.body}}</p>
+    </div>
+    <button type="submit" name="home"><a href = "{%url 'home'%}">홈으로</a></button>
+</body>
+</html>

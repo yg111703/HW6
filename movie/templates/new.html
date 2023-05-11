@@ -1,0 +1,13 @@
+<style>
+    A:link{text-decoration: none; color:black;}
+</style>
+<div style="text-align: center">
+    <form action="{%url 'create'%}" method="post">
+        {%csrf_token%}
+        <p>제목: <input type="text" name="title"></p>
+        <p>예매율: <input type="text" name="percent"></p>
+        후기: <textarea name="body" id="" cols="30" rows="10"></textarea>
+        <p><button type="submit">submit</button></p>
+        <p><button type="submit" name="home"><a href = "{%url 'home'%}">홈으로</a></button></p>
+    </form>
+</div>  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE COMMUNITY</title>
+    <style>
+        table, tr, th, td {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        A:link{text-decoration: none; color:black;}
+    </style>
+</head>
+<body>
+    <div style = "text-align: center; background-color: rgb(48, 199, 241);">
+        <h1>MOVIE COMMUNITY</h1>
+    </div>
+    <div style = "text-align: center; background-color:rgb(194, 228, 238)">
+        총 게시물 수: {{count}}
+    </div>
+    <br>
+    <div>
+        <table>
+            <thead>
+                <tr style = "background-color: lightgrey">
+                    <th>영화</th>
+                    <th>예매율</th>
+                    <th>후기</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    <td><a href="{%url 'detail' movie.id%}">{{movie.title}}</a></td>
+                    <td>{{movie.percent}}</td>
+                    <td>{{movie.body}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div style="text-align: right">
+        <button type="submit" name="new"><a href = "{%url 'new'%}">새 게시물</a></button>
+    </div>
+</body>
+</html>
